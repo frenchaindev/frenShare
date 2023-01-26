@@ -34,16 +34,11 @@ async function init(networks,rpc_,command,command_b) {
     var eth_rpc = "https://mainnet.infura.io/v3/18a7cd952c6b0498b0fdfff781680041";
     var fren_rpc = "https://rpc-02.frenscan.io";
     var fren_testnet_rpc = "https://rpc-01tn.frenchain.app";
-{
-  "dependencies": {
-    "@ethersproject/experimental": "^5.7.0",
-    "@truffle/hdwallet-provider": "^2.1.4",
-    "ethers": "^5.7.2"
-  }
-}
+    
     const provider_ETH = new ethers.providers.JsonRpcProvider(eth_rpc);
     const provider_FREN = new ethers.providers.JsonRpcProvider(fren_rpc);
     const provider_FREN_Testnet = new ethers.providers.JsonRpcProvider(fren_testnet_rpc);
+ 
     let web3;
     if(networks.toString() == "ETH"){
         provider = provider_ETH;
