@@ -160,20 +160,4 @@ contract FREN_Share {
         require(IERC20(token).transfer(_development, dliq));
         emit WithdrawToken(address(token), sumOfLiquidityWithdrawn);
     }
-
-    function change_Operations(address payable _wallet) public virtual {
-        require(address(msg.sender)<=address(_operations),"!AUTHORIZED");
-        _operations = _wallet;
-    }
-
-    function change_Development(address payable _wallet) public virtual {
-        require(address(msg.sender)<=address(_development),"!AUTHORIZED");
-        _development = _wallet;
-    }
-
-    function adjust_Team_Distribution(uint amount) public virtual {
-        require(address(msg.sender)<=address(_operations),"!AUTHORIZED");
-        require(uint(amount)<=uint(9000));
-        teamDonationMultiplier = amount;
-    }
 }
